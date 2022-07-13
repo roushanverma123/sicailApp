@@ -8,9 +8,22 @@ app.get('/', (req, res) => {
 });
 
 app.get('/greetings', (req, res) => {
-  res.send('Greetings! From Roushan!!');
+  res.status(200).send('Greetings! From Roushan!!');
 
 });
+
+app.get('/api/v1/instagram', (req, res) => {
+  const instaSocial = {
+    username: "roushanverma123",
+    followers:66,
+    following:77,
+    date: Date.now(),
+  }
+  res.status(200).send({instaSocial});
+
+});
+
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
