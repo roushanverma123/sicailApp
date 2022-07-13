@@ -1,6 +1,8 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require('express');
+const app = express();
+const port = 4000 || process.env.PORT;
+const format = require('date-format');
+
 
 app.get('/', (req, res) => {
   res.send('Hello World! From Roushan!!');
@@ -17,7 +19,7 @@ app.get('/api/v1/instagram', (req, res) => {
     username: "roushanverma123",
     followers:66,
     following:77,
-    date: Date.now(),
+    date: format.asString("dd-MM-yyyy, hh:mm:ss",new Date),
   }
   res.status(200).json(instaSocial);
 
@@ -28,7 +30,7 @@ app.get('/api/v1/facebook', (req, res) => {
     username: "roushanvermapage",
     followers:100,
     following:200,
-    date: Date.now(),
+    date: format.asString("dd-MM-yyyy, hh:mm:ss",new Date),
   }
   res.status(200).json(facebookSocial);
 
@@ -39,9 +41,14 @@ app.get('/api/v1/linkedin', (req, res) => {
     username: "roushanvermaofficial",
     followers:66,
     following:77,
-    date: Date.now(),
+    date: format.asString("dd-MM-yyyy, hh:mm:ss",new Date),
   }
   res.status(200).json(linkedinSocial);
+
+});
+
+app.get('/api/v1/:token', (req, res) => {
+  res.status(200).json({param: req.params.token});
 
 });
 
