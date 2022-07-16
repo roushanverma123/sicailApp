@@ -5,12 +5,12 @@ const format = require('date-format');
 
 
 app.get('/', (req, res) => {
-  res.send('Hello World! From Roushan!!');
+  res.status(200).json({msg:"hello from Roushan!!"});
 
 });
 
 app.get('/greetings', (req, res) => {
-  res.status(200).send('Greetings! From Roushan!!');
+  res.status(200).json({msg:"greetings from Roushan!!"});
 
 });
 
