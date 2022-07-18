@@ -3,12 +3,13 @@ const app = express();
 const port =  process.env.PORT || 4000;
 const format = require('date-format');
 
-
+//for basic enterence of the routes
 app.get('/', (req, res) => {
   res.status(200).json({msg:"hello from Roushan!!"});
 
 });
 
+//instagram profile
 app.get('/api/v1/instagram', (req, res) => {
   const instaSocial = {
     username: "roushanverma123",
@@ -20,6 +21,7 @@ app.get('/api/v1/instagram', (req, res) => {
 
 });
 
+//facebook profile
 app.get('/api/v1/facebook', (req, res) => {
   const facebookSocial = {
     username: "roushanvermapage",
@@ -31,6 +33,7 @@ app.get('/api/v1/facebook', (req, res) => {
 
 });
 
+//linkedin profile
 app.get('/api/v1/linkedin', (req, res) => {
   const linkedinSocial = {
     username: "roushanvermaofficial",
@@ -42,11 +45,15 @@ app.get('/api/v1/linkedin', (req, res) => {
 
 });
 
+
+//testing api { send anything }
 app.get('/api/v1/:token', (req, res) => {
   res.status(200).json({param: req.params.token});
 
 });
 
+
+//listening to port 4000
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 });
