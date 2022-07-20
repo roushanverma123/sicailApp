@@ -13,8 +13,8 @@ app.get('/', (req, res) => {
 app.get('/api/v1/instagram', (req, res) => {
   const instaSocial = {
     username: "roushanverma123",
-    followers:66,
-    following:77,
+    followers:70,
+    following:79,
     date: format.asString("dd-MM-yyyy, hh:mm:ss",new Date),
   }
   res.status(200).json(instaSocial);
@@ -37,14 +37,13 @@ app.get('/api/v1/facebook', (req, res) => {
 app.get('/api/v1/linkedin', (req, res) => {
   const linkedinSocial = {
     username: "roushanvermaofficial",
-    followers:66,
-    following:77,
+    followers:660,
+    following:770,
     date: format.asString("dd-MM-yyyy, hh:mm:ss",new Date),
   }
   res.status(200).json(linkedinSocial);
 
 });
-
 
 //testing api { send anything }
 app.get('/api/v1/:token', (req, res) => {
