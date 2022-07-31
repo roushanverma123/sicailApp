@@ -16,17 +16,17 @@ app.get('/', (req, res) => {
 
 });
 
-//instagram profile
-app.get('/api/v1/instagram', (req, res) => {
-  const instaSocial = {
-    username: "roushanverma123",
-    followers:70,
-    following:79,
-    date: format.asString("dd-MM-yyyy, hh:mm:ss",new Date),
-  }
-  res.status(200).json(instaSocial);
+// //instagram profile
+// app.get('/api/v1/instagram', (req, res) => {
+//   const instaSocial = {
+//     username: "roushanverma123",
+//     followers:70,
+//     following:79,
+//     date: format.asString("dd-MM-yyyy, hh:mm:ss",new Date),
+//   }
+//   res.status(200).json(instaSocial);
 
-});
+// });
 
 //facebook profile
 app.get('/api/v1/facebook', (req, res) => {
